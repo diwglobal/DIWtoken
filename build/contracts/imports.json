@@ -1,0 +1,98 @@
+{
+  "contractName": "imports",
+  "abi": [],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820b4ee9d68b217cc707a1b5925060946b01082a01ddf8d57f53d4715275a05a29f0029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820b4ee9d68b217cc707a1b5925060946b01082a01ddf8d57f53d4715275a05a29f0029",
+  "sourceMap": "208:19:4:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "208:19:4:-;;;;;",
+  "source": "pragma solidity 0.4.18;\n\nimport \"zeppelin-solidity/contracts/token/TokenTimelock.sol\";\nimport \"zeppelin-solidity/contracts/token/TokenVesting.sol\";\n\n\n// need to include this in order for truffle test to work\ncontract imports {}",
+  "sourcePath": "/home/user/Documents/work/DIW/Digital-Identification-Wallet-ICO/contracts/imports.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/user/Documents/work/DIW/Digital-Identification-Wallet-ICO/contracts/imports.sol",
+      "exportedSymbols": {
+        "imports": [
+          834
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.4",
+            ".18"
+          ]
+        },
+        "id": 831,
+        "name": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1642,
+          "absolutePath": "zeppelin-solidity/contracts/token/TokenTimelock.sol",
+          "file": "zeppelin-solidity/contracts/token/TokenTimelock.sol",
+          "scope": 835,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 832,
+        "name": "ImportDirective",
+        "src": "25:61:4"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1901,
+          "absolutePath": "zeppelin-solidity/contracts/token/TokenVesting.sol",
+          "file": "zeppelin-solidity/contracts/token/TokenVesting.sol",
+          "scope": 835,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 833,
+        "name": "ImportDirective",
+        "src": "87:60:4"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            834
+          ],
+          "name": "imports",
+          "nodes": [
+            null
+          ],
+          "scope": 835
+        },
+        "id": 834,
+        "name": "ContractDefinition",
+        "src": "208:19:4"
+      }
+    ],
+    "id": 835,
+    "name": "SourceUnit",
+    "src": "0:227:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-19T11:33:38.831Z"
+}

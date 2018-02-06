@@ -1,0 +1,14 @@
+- airdropper
+  - requires supplier to fuel it with tokens
+
+- crowdsale
+  - requires supplier to fue- requires supplier to fuel it with tokensl it with tokens
+  - add milestones
+  - start
+  - transfer ownership
+
+- timelock
+  - requires supplier to fuel it with tokens
+
+- vesting
+  - requires supplier to fuel it with tokens
