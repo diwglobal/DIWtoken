@@ -2,7 +2,7 @@
 
 Amount of whitelist private period and any Pre-ICO gathering of funds are not part of the smart contract. Distribution of tokens from private period will be prior to the start of the ICO.
 
-The Milestones defined in the whitepaper, will be manually added with the creation of the smart-contract of the ICO. This is because the tokens distributed at the private whitelist period or the Pre-ICo will be deducted by the 700Million tokens available for the Crowdsale. The start price of the ICO will depend depent on the remaining tokens.
+The Milestones defined in the whitepaper, will be manually added with the creation of the smart-contract of the ICO. This is because the tokens distributed at the private whitelist period or the Pre-ICO will be deducted by the 700Million tokens available for the Crowdsale. The start price of the ICO will depend depent on the remaining tokens.
 
 ## Example:
 
