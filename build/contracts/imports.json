@@ -1,15 +1,15 @@
 {
   "contractName": "imports",
   "abi": [],
-  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820b4ee9d68b217cc707a1b5925060946b01082a01ddf8d57f53d4715275a05a29f0029",
-  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820b4ee9d68b217cc707a1b5925060946b01082a01ddf8d57f53d4715275a05a29f0029",
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a723058205b73f90d387da2bcfb9bc39a0df3e46bd674b472e3bfdb2d81666dbc75531d250029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a723058205b73f90d387da2bcfb9bc39a0df3e46bd674b472e3bfdb2d81666dbc75531d250029",
   "sourceMap": "208:19:4:-;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "208:19:4:-;;;;;",
   "source": "pragma solidity 0.4.18;\n\nimport \"zeppelin-solidity/contracts/token/TokenTimelock.sol\";\nimport \"zeppelin-solidity/contracts/token/TokenVesting.sol\";\n\n\n// need to include this in order for truffle test to work\ncontract imports {}",
-  "sourcePath": "/home/user/Documents/work/DIW/Digital-Identification-Wallet-ICO/contracts/imports.sol",
+  "sourcePath": "/mnt/d/work/DigitalIdentificationWallet/token/contracts/imports.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/home/user/Documents/work/DIW/Digital-Identification-Wallet-ICO/contracts/imports.sol",
+      "absolutePath": "/mnt/d/work/DigitalIdentificationWallet/token/contracts/imports.sol",
       "exportedSymbols": {
         "imports": [
           834
@@ -94,5 +94,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-19T11:33:38.831Z"
+  "updatedAt": "2018-03-31T17:30:45.265Z"
 }
