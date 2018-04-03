@@ -10,6 +10,8 @@
     "ethjs": "^0.3.1",
     "truffle": "^4.0.4",
     "truffle-hdwallet-provider": "0.0.3",
+    "web3-utils": "^1.0.0-beta.33",
+    "xlsx-to-json": "^0.3.0",
     "zeppelin-solidity": "^1.5.0"
   },
   "engines": {
