@@ -83,6 +83,20 @@ contract("DIWCrowdsale", function(accounts) {
     assert.isTrue(buyer1TokenBalance.equals(web3.toWei(rate1, "ether")));
   });
 
+  it("buy tokens with 0.05 ether", async function() {
+    const amount = web3.toWei(0.05, "ether");
+
+    await crowdsale.buyTokens(buyer1, {
+      from: buyer1,
+      value: amount
+    });
+
+    const buyer1TokenBalance = await token.balanceOf(buyer1);
+
+    const expected = new web3.BigNumber(rate1).times(amount);
+    assert.isTrue(buyer1TokenBalance.equals(expected));
+  });
+
   it("change price", async function() {
     await crowdsale.changeRate(rate2);
 
@@ -143,7 +157,7 @@ contract("DIWCrowdsale", function(accounts) {
     await expectThrow(
       crowdsale.buyTokens(buyer1, {
         from: buyer1,
-        value: web3.toWei(0.04, "ether")
+        value: web3.toWei(0.049, "ether")
       })
     );
   });

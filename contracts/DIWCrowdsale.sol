@@ -2,7 +2,6 @@ pragma solidity 0.4.18;
 
 import "zeppelin-solidity/contracts/math/SafeMath.sol";
 import "zeppelin-solidity/contracts/token/SafeERC20.sol";
-import "zeppelin-solidity/contracts/math/SafeMath.sol";
 import "zeppelin-solidity/contracts/lifecycle/Pausable.sol";
 import "./DIW.sol";
 
@@ -40,7 +39,6 @@ contract DIWCrowdsale is Pausable {
   event TokenPurchase(address indexed purchaser, address indexed beneficiary, uint256 value, uint256 amount);
 
   function DIWCrowdsale(uint256 _startTime, uint256 _endTime, uint256 _rate, address _wallet, address _token) public {
-    require(_startTime >= now);
     require(_endTime >= _startTime);
     require(_rate > 0);
     require(_wallet != address(0));
@@ -60,6 +58,8 @@ contract DIWCrowdsale is Pausable {
 
   // change rate
   function changeRate(uint256 _rate) public onlyOwner {
+    require(_rate > 0); 
+
     rate = _rate;
   }
 
@@ -92,10 +92,9 @@ contract DIWCrowdsale is Pausable {
   // @return true if the transaction can buy tokens
   function validPurchase() internal view whenNotPaused returns (bool) {
     bool withinPeriod = now >= startTime && now <= endTime;
-    bool nonZeroPurchase = msg.value != 0;
-    bool biggerThanMinimum = msg.value > 50000000000000000;
+    bool biggerThanMinimum = msg.value >= 0.05 ether;
 
-    return withinPeriod && nonZeroPurchase && biggerThanMinimum;
+    return withinPeriod && biggerThanMinimum;
   }
 
   // @return true if crowdsale event has ended

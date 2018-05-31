@@ -11,11 +11,10 @@ const start = async (deployer, network, accounts) => {
   const contracts = require(`../build/addresses-${network}.json`);
 
   // -> crowdsale info
-  const crowdsaleSupply = web3.toWei(7e8, "ether");
-  const startTime = 1525348800;
-  const endTime = startTime + +duration.days(28);
+  const startTime = 1525262400;
+  const endTime = startTime + +duration.days(29);
   const rate = 10500;
-  const wallet = keys.supplier;
+  const wallet = keys.wallet;
 
   // --> crowdsale
   const crowdsale = await deploy(
@@ -24,7 +23,6 @@ const start = async (deployer, network, accounts) => {
     endTime,
     rate,
     wallet,
-    keys.supplier,
     contracts.DIW
   );
 
