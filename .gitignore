@@ -1,6 +1,4 @@
 node_modules/
-keys.js
+airdrops/
 
-airdrops/inputs
-airdrops/outputs
-airdrops/process.js
+keys.js

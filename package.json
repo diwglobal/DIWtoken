@@ -8,6 +8,7 @@
   "license": "ISC",
   "dependencies": {
     "ethjs": "^0.3.1",
+    "solidity-utils": "^1.0.2",
     "truffle": "^4.0.4",
     "truffle-hdwallet-provider": "0.0.3",
     "web3-utils": "^1.0.0-beta.33",

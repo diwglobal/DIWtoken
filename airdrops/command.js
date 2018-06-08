@@ -1,19 +1,53 @@
-(() => {
-  // !! CHANGE THIS !!
-  const { wallets, tokens } = require("./airdrops/outputs/2.json");
-  // !! CHANGE THIS !!
+const [, , , , , network, target] = process.argv;
+const path = require("path");
+const web3Utils = require("web3-utils");
 
-  const tokenAddr = "0xa253be28580ae23548a4182d95bf8201c28369a8";
-  const from = "0xa8c4f0a102b5a4c5f49997b59727625d9e3dbd84";
+const DIW = artifacts.require("DIW");
+const AirdropperERC20 = artifacts.require("AirdropperERC20_v2");
+const Deployer = require("solidity-utils/helpers/Deployer");
+const outputsDir = path.join(__dirname, "outputs", target);
 
-  if (!Array.isArray(wallets) || !Array.isArray(tokens)) throw Error("not arr");
-  if (wallets.length !== tokens.length) throw Error("length wrong");
+if (!target) throw Error("invalid target");
 
-  contracts.AirdropperERC20.multiSend(tokenAddr, wallets, tokens, {
-    from,
-    gas: 7500000,
-    gasPrice: Eth.toWei(1, "gwei").toString()
-  })
-    .then(console.log)
-    .catch(console.error);
-})();
+module.exports = async callback => {
+  const items = require(path.join(outputsDir, "output.json"));
+  const deployer = Deployer({ network });
+  const contractsAddr = deployer.getAddresses();
+  const diw = await DIW.at(contractsAddr.DIW);
+  const airdropper = await AirdropperERC20.at(contractsAddr.AirdropperERC20_v2);
+
+  await Promise.all(
+    items.map(async item => {
+      const { id, batch } = item;
+
+      const { addresses, amounts } = batch.reduce(
+        (oldObj, data) => {
+          const newObj = oldObj;
+
+          newObj.addresses.push(data.address);
+          newObj.amounts.push(data.amount);
+
+          return newObj;
+        },
+        {
+          addresses: [],
+          amounts: []
+        }
+      );
+
+      const airdropperAmount = await diw
+        .balanceOf(contractsAddr.AirdropperERC20_v2)
+        .then(v => v.toString());
+      const sumAmounts = amounts.reduce((sum, v) => (sum += +v), 0);
+
+      // console.log(airdropperAmount, sumAmounts);
+
+      return airdropper
+        .multiSend(contractsAddr.DIW, id, addresses, amounts)
+        .then(v => console.log(id, v))
+        .catch(v => console.error(id, v));
+    })
+  );
+
+  callback("done");
+};
