@@ -5,7 +5,7 @@ import "zeppelin-solidity/contracts/token/ERC20.sol";
 
 
 contract AirdropperERC20_v2 is Ownable {
-  mapping(bytes32 => bool) private batches;
+  mapping(bytes32 => bool) public batches;
 
   function multiSend(ERC20 token, bytes32 batchId, address[] recipients, uint256[] amounts) external onlyOwner {
     require(recipients.length == amounts.length);

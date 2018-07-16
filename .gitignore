@@ -1,4 +1,5 @@
 node_modules/
-airdrops/
-
 keys.js
+notes_deploy.txt
+
+scripts/airdrops

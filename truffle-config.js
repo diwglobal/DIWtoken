@@ -23,7 +23,7 @@ module.exports = {
         `https://mainnet.infura.io/${mainnetKeys.infuraKey}`
       ),
       gas: "7000000",
-      gasPrice: "50000000000",
+      gasPrice: "5000000000",
       network_id: 1
     }
   }
